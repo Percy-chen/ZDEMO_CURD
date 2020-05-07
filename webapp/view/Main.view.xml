@@ -1,0 +1,83 @@
+<mvc:View controllerName="ZDEMO_CURD.ZDEMO_CURD.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns:l="sap.ui.layout" xmlns:t="sap.ui.table" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+	<Page title="{i18n>appTitle}">
+		<content>
+			<Panel expandable="true" headerText="{i18n>Panel1}" width="auto" class="sapUiResponsiveMargin" expanded="{/appProperties/expanded1}">
+				<f:Form editable="true">
+					<f:layout>
+						<f:ResponsiveGridLayout labelSpanL="4" labelSpanM="2" emptySpanL="0" emptySpanM="0" columnsL="4" columnsM="2"/>
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement>
+									<f:fields>
+										<l:HorizontalLayout>
+											<Label text="{i18n>Bname}" labelFor="Bname" width="4em"/>
+											<Input width="8em" fieldWidth="30%" id="Bname" value="{/Sel/Bname}"/>
+										</l:HorizontalLayout>
+										<l:HorizontalLayout>
+											<Label text="{i18n>NameFirst}" labelFor="NameFirst" width="4em"/>
+											<Input width="8em" id="NameFirst" value="{/Sel/NameFirst}"/>
+										</l:HorizontalLayout>
+										<l:HorizontalLayout>
+											<Label text="{i18n>NameLast}" labelFor="NameLast" width="4em"/>
+											<Input width="8em" id="NameLast" value="{/Sel/NameLast}"/>
+										</l:HorizontalLayout>
+										<l:HorizontalLayout>
+											<Label text="{i18n>NameText}" labelFor="NameText" width="4em"/>
+											<Input width="8em" id="NameText" value="{/Sel/NameText}"/>
+										</l:HorizontalLayout>
+									</f:fields>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+			</Panel>
+		</content>
+		<content>
+			<Panel expandable="true" headerText="{i18n>Panel2}" width="auto" class="sapUiResponsiveMargin" expanded="{/appProperties/expanded2}">
+				<content>
+					<!--MultiSelect SingleSelect None -->
+					<Table items="{/Item}" mode="SingleSelectLeft" id="DataTable">
+						<columns>
+							<Column hAlign="Center">
+								<Text text="{i18n>Bname}"/>
+							</Column>
+							<Column hAlign="Center">
+								<Text text="{i18n>NameFirst}"/>
+							</Column>
+							<Column hAlign="Center">
+								<Text text="{i18n>NameLast}"/>
+							</Column>
+							<Column hAlign="Center">
+								<Text text="{i18n>NameText}"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Text text="{Bname}"/>
+									<Input value="{NameFirst}"/>
+									<Input value="{NameLast}"/>
+									<Input value="{NameText}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Panel>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button icon="sap-icon://table-view" text="{i18n>ButtonSearch}" press="handleSearch" id="ButtonSearch" width="6em"/>
+					<Button icon="sap-icon://create" text="{i18n>ButtonCreate}" type="Accept" press="handleCreate" width="6em"/>
+					<Button icon="sap-icon://complete" text="{i18n>ButtonUpdate}" press="handleUpdate" width="6em"/>
+					<Button icon="sap-icon://delete" text="{i18n>ButtonDel}" type="Reject" press="handleDel" width="6em"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>
