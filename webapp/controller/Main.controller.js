@@ -13,6 +13,7 @@ sap.ui.define(["./BaseController",
 			this._JSONModel = this.getModel();
 			// this.get_Doclist();
 		},
+		
 		handleSearch: function () {
 			this.setBusy(true);
 			var Sel = this._JSONModel.getData().Sel;
